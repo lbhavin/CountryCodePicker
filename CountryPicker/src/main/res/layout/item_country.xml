@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/_10sdp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageView
+    android:layout_marginBottom="@dimen/_10sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_flag"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_25sdp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/flag_india"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flag_india" />
 
     <TextView
         android:id="@+id/tv_country_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_12ssp"
-        android:fontFamily="@font/montserrat_medium"
-        android:textColor="@color/text_color"
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:background="@android:color/transparent"
+        android:fontFamily="@font/montserrat_medium"
         android:gravity="center_vertical"
         android:singleLine="true"
         android:text="India"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_flag"
         app:layout_constraintEnd_toStartOf="@+id/tv_country_code"
         app:layout_constraintStart_toEndOf="@+id/iv_flag"
         app:layout_constraintTop_toTopOf="@+id/iv_flag" />
+
     <TextView
         android:id="@+id/tv_country_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_12ssp"
-        android:fontFamily="@font/montserrat_medium"
-        android:textColor="@color/text_color"
         android:layout_marginStart="@dimen/_10sdp"
         android:background="@android:color/transparent"
+        android:fontFamily="@font/montserrat_medium"
         android:gravity="center_vertical"
         android:singleLine="true"
         android:text="+91"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_flag"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iv_flag" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
-        android:background="@color/greyLowOpacity"
         android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@+id/iv_flag"
+        android:background="@color/greyLowOpacity"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/iv_flag" />
 </androidx.constraintlayout.widget.ConstraintLayout>

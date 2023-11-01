@@ -34,7 +34,7 @@ class CountryListAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(mFilteredList[position]) {
             holder.binding.tvCountryName.text = countryName
-            holder.binding.tvCountryCode.text = phoneCode
+            holder.binding.tvCountryCode.text = "+$phoneCode"
             flagImage?.let { holder.binding.ivFlag.setImageResource(it) }
             holder.binding.root.setOnClickListener {
                 listener.onSelectItem(mFilteredList[position])
