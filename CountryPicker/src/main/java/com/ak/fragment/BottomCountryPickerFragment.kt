@@ -1,5 +1,6 @@
 package com.ak.fragment
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,10 @@ import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ak.countrypicker.databinding.FragmentCountryPickerBinding
 import com.ak.adapter.CountryListAdapter
+import com.ak.countrypicker.R
 import com.ak.model.CountryItem
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomCountryPickerFragment : BottomSheetDialogFragment(),
@@ -24,6 +28,27 @@ class BottomCountryPickerFragment : BottomSheetDialogFragment(),
     ): View? {
         binding = FragmentCountryPickerBinding.inflate(inflater, container, false)
         return binding?.root
+    }
+
+//    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+//        val dialog = BottomSheetDialog(requireContext(), theme)
+//        dialog.setOnShowListener {
+//
+//            val bottomSheetDialog = it as BottomSheetDialog
+//            val parentLayout =
+//                bottomSheetDialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+//            parentLayout?.let { it ->
+//                val behaviour = BottomSheetBehavior.from(it)
+////                setupFullHeight(it)
+//                behaviour.state = BottomSheetBehavior.STATE_EXPANDED
+//            }
+//        }
+//        return dialog
+//    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL, R.style.BottomSheetDialog)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
