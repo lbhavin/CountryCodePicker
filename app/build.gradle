@@ -16,9 +16,19 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file('countrypicker.jks')
+            storePassword 'countrypicker'
+            keyAlias 'countrypicker'
+            keyPassword 'countrypicker'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
